@@ -13,3 +13,9 @@ push the according buttons to draw a line
 
 run the install.sh to install appropriate libraries for this program
 
+==========
+Comments from Prof. Yoder
+
+It works!  Nice use of "blessed".  Was it easy to use?
+
+Grade:  10/10
