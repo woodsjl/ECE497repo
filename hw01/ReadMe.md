@@ -16,3 +16,10 @@ This program simulates an etch a sketch toy
 Use the arrow keys to move the cursor around and draw fascinating pictures
 press the c key to clear the screen and leave the cursor at its present location
 press the e key to exit the program 
+
+
+==========
+Comments by Prof. Yoder
+Very well done.  Nice touch getting the grid size from the terminal.
+
+Grade:  10/10
