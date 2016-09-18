@@ -17,4 +17,20 @@ Etch-A-Scketch.js:
 	run the install.sh file to install needed i2c node package
 	run this file to play the etch a sketch
 
+readTmp.js
+	this is a program that allows the user to interface with two temperature sensors via i2c-2 bus
+	wire the following up 
+	two temp101 sensor one with address to vss one with address to ground
+	test1 button to P9_13
+	test2 button to P9_17
+	wire the alert pin from sensors to P9_14
+	when the test1 button is pressed the program will read all the values in the four registers
+		of the sensor and then set the high and low limits
+	when the test2 button is pressed the program will do the same as test1 but for the 
+		second sensor
 
+
+readTmp101.sh
+	this is a shell script that gets the values of two temperature sensors wired the
+		same as above and then it converts them to fareheight and prints them to 
+		the screen 
