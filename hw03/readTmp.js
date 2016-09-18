@@ -13,6 +13,8 @@ var temp2 = new i2c(0x48, {
 });
 var low = [0x15]; // 21 C | ~70 F
 var high = [0x20]; // 32 C | ~90 F
+var config = [0x06]; // this sets the configuration to alert mode 
+                    //active high and interrupt mode
 
 // pins to be used in program
 var alert = 'P9_14';
@@ -52,6 +54,10 @@ function getHigh(device){
     });
 }
 
+function setConfig(device,config){
+    device.writeBytes(1,config,function(err){});
+}
+
 function setLow(device,pLow){
     device.writeBytes(2,pLow,function(err){});
 }
@@ -62,11 +68,17 @@ function setHigh(device,pHigh){
 
 function alertHandler(){
     console.log("there has been an alert");
+    console.log("temp 1 = "+getTemp(temp1));
+    console.log("temp 2 = "+getTemp(temp2));
 }
 
 b.attachInterrupt(testButton1, test1, b.RISING);
 b.attachInterrupt(testButton2, test2, b.RISING);
 b.attachInterrupt(alert, alertHandler, b.CHANGE);
+
+// set configutations
+setConfig(temp1,config);
+setConfig(temp2,config);
 console.log("running");
 
 function test1(){
