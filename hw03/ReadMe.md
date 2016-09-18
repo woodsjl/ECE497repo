@@ -14,6 +14,7 @@ Etch-A-Scketch.js:
 	clear = P9_41
 	exit = P9_12
 	cconnect the led matrix to the i2c-c bus 
+	run the install.sh file to install needed i2c node package
 	run this file to play the etch a sketch
 
 
