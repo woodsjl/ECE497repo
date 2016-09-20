@@ -35,3 +35,9 @@ readTmp101.sh
 	this is a shell script that gets the values of two temperature sensors wired the
 		same as above and then it converts them to fareheight and prints them to 
 		the screen 
+
+==========
+Comments from Prof. Mark A. Yoder
+Looks good.  It's odd that powering down your TMP101 sensors made them work.
+
+Grade:	10/10
