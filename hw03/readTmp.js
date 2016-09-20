@@ -13,7 +13,7 @@ var temp2 = new i2c(0x48, {
 });
 var low = [0x15]; // 21 C | ~70 F
 var high = [0x20]; // 32 C | ~90 F
-var config = [0x80]; // 0x06 sets the configuration to alert mode 
+var config = [0x00]; // 0x06 sets the configuration to alert mode 
                     //active high and interrupt mode
 
 // pins to be used in program
