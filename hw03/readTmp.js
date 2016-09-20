@@ -72,6 +72,8 @@ function alertHandler(){
     console.log("there has been an alert");
     console.log("temp 1 = "+getTemp(temp1));
     console.log("temp 2 = "+getTemp(temp2));
+    // setConfig(temp1,config);
+    // setConfig(temp2,config);
 }
 
 b.attachInterrupt(testButton1, test1, b.RISING);
@@ -80,8 +82,8 @@ b.attachInterrupt(alert1, alertHandler, b.CHANGE);
 b.attachInterrupt(alert2, alertHandler, b.CHANGE);
 
 // set configutations
-setConfig(temp1,config);
-setConfig(temp2,config);
+// setConfig(temp1,config);
+// setConfig(temp2,config);
 console.log("running");
 
 function test1(){
@@ -89,12 +91,13 @@ function test1(){
     getConfig(temp1);
     getLow(temp1);
     getHigh(temp1);
+    setConfig(temp1,config);
     console.log("setting low to 21C");
     setLow(temp1,low);
-    getLow(temp1);
+    // getLow(temp1);
     console.log("setting high to 32C");
     setHigh(temp1,high);
-    getHigh(temp1);
+    // getHigh(temp1);
 }
 
 function test2(){
@@ -102,10 +105,11 @@ function test2(){
     getConfig(temp2);
     getLow(temp2);
     getHigh(temp2);
+    setConfig(temp2,config);
     console.log("setting low to 21C");
     setLow(temp2,low);
-    getLow(temp2);
+    // getLow(temp2);
     console.log("setting high to 30C");
     setHigh(temp2,[0x1b]);
-    getHigh(temp2);
+    // getHigh(temp2);
 }
