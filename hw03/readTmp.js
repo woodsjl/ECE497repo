@@ -13,7 +13,7 @@ var temp2 = new i2c(0x48, {
 });
 var low = [0x15]; // 21 C | ~70 F
 var high = [0x20]; // 32 C | ~90 F
-var config = [0x06]; // this sets the configuration to alert mode 
+var config = [0x00]; // 0x06 sets the configuration to alert mode 
                     //active high and interrupt mode
 
 // pins to be used in program
@@ -44,13 +44,13 @@ function getConfig(device){
 
 function getLow(device){
     device.readBytes(2,1,function(err,res){
-       console.log("Low limit is "+res.readInt8(0)); 
+       console.log("Low limit is "+res.readInt8(0)+"C and "+(((res.readInt8(0)* 9)/5) + 32)+"F"); 
     });
 }
 
 function getHigh(device){
     device.readBytes(3,1,function(err,res){
-       console.log("High limit is "+res.readInt8(0)); 
+       console.log("High limit is "+res.readInt8(0)+"C and "+(((res.readInt8(0)* 9)/5) + 32)+"F"); 
     });
 }
 
@@ -102,7 +102,7 @@ function test2(){
     console.log("setting low to 21C");
     setLow(temp2,low);
     getLow(temp2);
-    console.log("setting high to 32C");
-    setHigh(temp2,high);
+    console.log("setting high to 30C");
+    setHigh(temp2,high-2);
     getHigh(temp2);
 }
