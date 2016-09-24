@@ -74,6 +74,18 @@ function LEDclick(i, j) {
         socket.socket.reconnect();
       }
     }
+    
+    function makeRed() {
+        
+    }
+    
+    function makeGreen() {
+        
+    }
+    
+    function clear() {
+        
+    }
 
     function disconnect() {
       socket.disconnect();
