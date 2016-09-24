@@ -41,8 +41,17 @@ function LEDclick(i, j) {
 			 //    disp: '0x'+disp[i].toString(16)});
 //	socket.emit('i2c', i2cNum);
     // Toggle bit on display
+    // 
     if(disp[i]>>j&0x1 === 1) {
-        $('#id'+i+'_'+j).addClass('on');
+        if(green && red){
+            $('#id'+i+'_'+j).addClass('onorange');
+        }else if(green){
+            $('#id'+i+'_'+j).addClass('on');
+        }else if(red){
+            $('#id'+i+'_'+j).addClass('onred');
+        }else{
+            $('#id'+i+'_'+j).addClass('on');
+        }
     } else {
         $('#id'+i+'_'+j).removeClass('on');
     }

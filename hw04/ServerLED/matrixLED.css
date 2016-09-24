@@ -35,6 +35,18 @@ body {
 
 }
 
+.onred {
+	border: 1px solid #00ee00;
+	background-color: red;
+
+}
+
+.onorange {
+	border: 1px solid #00ee00;
+	background-color: orange;
+
+}
+
 #i2cNum {
 	text-align: right; 
 	width:	3em;
