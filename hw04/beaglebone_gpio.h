@@ -25,6 +25,6 @@
 #define GPIO_60  (1<<28)
 
 
-#define LEFTBTN (1<<31)
-#define BOTTOMBTN (1<<30)
+#define LEFTBTN (1<<3)
+#define RIGHTBTN (1<<2)
 #endif
