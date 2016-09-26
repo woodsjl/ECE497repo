@@ -50,10 +50,19 @@ function LEDclick(i, j) {
         }else if(red){
             $('#id'+i+'_'+j).addClass('onred');
         }else{
-            $('#id'+i+'_'+j).addClass('on');
+            // $('#id'+i+'_'+j).addClass('onred');
         }
     } else {
+        // if(green && red){
+        //     $('#id'+i+'_'+j).removeClass('onrange');
+        // }else if (green){
+        //     $('#id'+i+'_'+j).removeClass('on');
+        // }else if (red){
+        //     $('#id'+i+'_'+j).removeClass('onred');
+        // }
+        $('#id'+i+'_'+j).removeClass('onorange');
         $('#id'+i+'_'+j).removeClass('on');
+        $('#id'+i+'_'+j).removeClass('onred');
     }
 }
 
@@ -98,14 +107,27 @@ function LEDclick(i, j) {
     
     function makeRed() {
         red = ~red;
+        if(red){
+            $('#makeRed').addClass('onred');
+        } else {
+            $('#makeRed').removeClass('onred');
+        }
     }
     
     function makeGreen() {
         green = ~green;
+        if(green){
+            $('#makeGreen').addClass('on');
+        } else {
+            $('#makeGreen').removeClass('on');
+        }
     }
     
     function clear() {
-        
+        var zero = 0x0000;
+        for (var i = 0; i < 16; i++){
+            socket.emit('i2cset', {i2cNum: i2cNum, i: i,  disp: '0x0000'});
+        }
     }
 
     function disconnect() {
