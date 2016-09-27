@@ -123,10 +123,16 @@ function LEDclick(i, j) {
         }
     }
     
-    function clear() {
-        var zero = 0x0000;
+    function clearMe() {
         for (var i = 0; i < 16; i++){
-            socket.emit('i2cset', {i2cNum: i2cNum, i: i,  disp: '0x0000'});
+            socket.emit('i2cset', {i2cNum: i2cNum, i: i,  disp: '0x00'});
+        }
+        for (var i = 0; i < 8; i++){
+            for (var j = 0; j < 8; j++){
+                $('#id'+i+'_'+j).removeClass('onorange');
+                $('#id'+i+'_'+j).removeClass('on');
+                $('#id'+i+'_'+j).removeClass('onred');
+            }
         }
     }
 
