@@ -34,7 +34,7 @@ function LEDclick(i, j) {
 			     disp: '0x'+disp[i].toString(16)});
     }
     if(red){
-        socket.emit('i2cset', {i2cNum: i2cNum, i: 2*i+1, 
+        socket.emit('i2cset', {i2cNum: i2cNum, i: (2*i)+1, 
 			     disp: '0x'+disp[i].toString(16)});
     }
     // socket.emit('i2cset', {i2cNum: i2cNum, i: 2*i, 
@@ -60,9 +60,16 @@ function LEDclick(i, j) {
         // }else if (red){
         //     $('#id'+i+'_'+j).removeClass('onred');
         // }
-        $('#id'+i+'_'+j).removeClass('onorange');
-        $('#id'+i+'_'+j).removeClass('on');
-        $('#id'+i+'_'+j).removeClass('onred');
+        if (green && red){
+            $('#id'+i+'_'+j).removeClass('onorange');
+        } else if(green){
+            $('#id'+i+'_'+j).removeClass('on');
+        }else if (red){
+            $('#id'+i+'_'+j).removeClass('onred');
+        }
+        // $('#id'+i+'_'+j).removeClass('onorange');
+        // $('#id'+i+'_'+j).removeClass('on');
+        // $('#id'+i+'_'+j).removeClass('onred');
     }
 }
 
