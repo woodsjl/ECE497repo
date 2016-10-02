@@ -7,5 +7,7 @@ npm install -g request
 
 # this adds the readTmp.js to the crontab
 echo "# 
-45 * * * * root /root/ECE497repo/hw05/DataPush/readTmp.js
+NODE_PATH=/usr/local/lib/node_modules
+30 * * * * root /root/ECE497repo/hw05/DataPush/readTmp.js
 " >> /etc/crontab 
+
