@@ -17,3 +17,8 @@ matrixLEDquestions is a document with answers to questions from hw04
 memory map Josh Woods is memory map of some of the interesting parts of 
 memory from the beagle bone black
 
+==========
+Prof. Yoder's comments
+Nice and complete.
+
+Grade:  10/10
