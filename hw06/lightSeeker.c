@@ -86,16 +86,25 @@ int main(int argc, char *argv[]) {
     
     printf("start button has been pressed\n");
     
+    *gpio_setdataout_addr0 = M1;
+            *gpio_setdataout_addr0 = M2;
+            *gpio_setdataout_addr1= M3;
+            *gpio_setdataout_addr1= M4;
+            
+    while(1){
+        
+    }
+    
     while(searchMode) {
         
         position = position % 4;
         printf("searching position %d\n",position);
-        if(position == 0) {
+        if(position == 0) {          // from left to right this is 1001
             *gpio_cleardataout_addr0 = M1;
             *gpio_cleardataout_addr0 = M2;
             *gpio_setdataout_addr1= M3;
             *gpio_setdataout_addr1= M4;
-        } else if (position == 1){
+        } else if (position == 1){ // from left to right this is 1001
             *gpio_cleardataout_addr0 = M1;
             *gpio_setdataout_addr0 = M2;
             *gpio_setdataout_addr1= M3;
