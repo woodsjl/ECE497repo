@@ -10,6 +10,9 @@ var m2 = 'P9_13';
 var m3 = 'P9_15';
 var m4 = 'P9_16';
 var startBtn = 'P9_21';
+var interval = 0;
+var steps = 0;
+var fullRotation = 20;
 
 // set start button pin to input
 b.pinMode(startBtn, b.INPUT);
@@ -28,9 +31,31 @@ console.log("running");
 // event handler functions 
 function startTracking() {
     console.log("inside start tracking method");
-	setStage4();
-	while(true){
-	    
+	// setStage4();
+	interval = setInterval(trackClockwise,100); // every 500 ms
+	// while(true){
+	   
+	// }
+}
+
+var position = 0;
+
+function trackClockwise(){
+	console.log("tracking\n");
+	position = position % 4;
+	if (position === 0){
+		setStage1();
+	} else if (position === 1) {
+		setStage2();
+	} else if (position === 2){
+		setStage3();
+	} else {
+		setStage4();
+	}
+	position = position + 1;
+	steps = steps + 1;
+	if(steps === fullRotation) {
+		clearInterval(interval);
 	}
 }
 
@@ -55,7 +80,7 @@ function setStage3(){ // 1001
 	b.digitalWrite(m4, 0);
 }
 
-function setStage4(){ // 
+function setStage4(){ // 1100
 	b.digitalWrite(m1, 1);
 	b.digitalWrite(m2, 0);
 	b.digitalWrite(m3, 0);
