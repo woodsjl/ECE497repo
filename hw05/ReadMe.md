@@ -15,3 +15,10 @@ kernel: This folder contains all of the nesessary tools for working with the
 kernel development, the new kernel, and the new uboot file
 
 make: This folder contains the Makefile for the make file project
+
+==========
+Prof. Yoder's comments
+Looks good and complete.
+It took a while to download all your kernel code.
+
+Grade:  10/10
