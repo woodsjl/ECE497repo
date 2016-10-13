@@ -36,7 +36,7 @@ console.log("running");
 
 // event handler functions 
 function startTracking() {
-    console.log("inside start tracking method");
+    // console.log("inside start tracking method");
 	interval = setInterval(trackClockwise,100); // every 100 ms
 }
 
@@ -48,7 +48,7 @@ function printAnalogValues(){
 var position = 0;
 
 function trackClockwise(){
-	console.log("tracking Clockwise position = ");
+	// console.log("tracking Clockwise position = ");
 	position = position % 4;
 	console.log(position + "\n");
 	var currentA0 = b.analogRead(a0);
@@ -79,7 +79,7 @@ function trackClockwise(){
 }
 
 function trackCounterClockwise(){
-	console.log("tracking Counter Clockwise\n");
+	// console.log("tracking Counter Clockwise\n");
 	position = position % 4;
 	var currentA0 = b.analogRead(a0);
 	var currentA1 = b.analogRead(a1);
