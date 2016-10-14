@@ -33,7 +33,7 @@ b.pinMode(m4,b.OUTPUT);
 b.attachInterrupt(startBtn, startTracking, b.RISING);
 
 console.log("running");
-
+interval = setInterval(printAnalogValues,1000);
 // event handler functions 
 function startTracking() {
     // console.log("inside start tracking method");
@@ -135,11 +135,21 @@ function gotoMin(){
 function hunt(){
 	var currentA0 = b.analogRead(a0);
 	var currentA1 = b.analogRead(a1);
-	if (currentA0 < currentA1) {
-		position = position - 1;
-	} else if (currentA1 < currentA0){
-		position = position + 1;
+	if (currentA0 < currentA1){ //((Math.abs(currentA0 - currentA1) > 0.1) && (currentA0 < currentA1)) {
+		if (Math.abs(currentA0 - currentA1) > 0.1) {
+			position = position + 1;
+			move();
+		}
+	} else if (currentA1 < currentA0){//((Math.abs(currentA1 - currentA0) > 0.1) &(currentA1 < currentA0)){
+		if (Math.abs(currentA0 - currentA1) > 0.1) {
+			position = position - 1;
+			move();
+		}
 	}
+	
+}
+
+function move(){
 	position = position % 4;
 	if (position === 0){
 		setStage1();
