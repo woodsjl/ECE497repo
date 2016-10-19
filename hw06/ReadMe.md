@@ -7,3 +7,9 @@ In order to do this you will need to wire a H bridge inputs to
 used in the lightSeeker.js file and then the outputs to the stepper motor.
 Wires will need to be run from the positive sides of each of the phototransistor
 then run the lightSeeker.js file
+
+==========
+Prof. Yoder's comments
+Looks good.
+
+Grade:  10/10
