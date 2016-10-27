@@ -19,13 +19,13 @@ int keepgoing = 1;    // Set to 0 when ctrl-c is pressed
 /****************************************************************
  * signal_handler
  ****************************************************************/
-void signal_handler(int sig);
-// Callback called when SIGINT is sent to the process (Ctrl-C)
-void signal_handler(int sig)
-{
-    printf( "\nCtrl-C pressed, cleaning up and exiting...\n" );
-	keepgoing = 0;
-}
+// void signal_handler(int sig);
+// // Callback called when SIGINT is sent to the process (Ctrl-C)
+// void signal_handler(int sig)
+// {
+//     printf( "\nCtrl-C pressed, cleaning up and exiting...\n" );
+// 	keepgoing = 0;
+// }
 
 int main(int argc, char *argv[]) {
     volatile void *gpio_addr0;
