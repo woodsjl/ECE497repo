@@ -80,7 +80,7 @@ static int __init ebbgpio_init(void){
  *  GPIOs and display cleanup messages.
  */
 static void __exit ebbgpio_exit(void){
-   printk(KERN_INFO "GPIO_TEST: The button state is currently: %d\n", gpio_get_value(input));
+   printk(KERN_INFO "GPIO_TEST: The button state is currently: %d\n", gpio_get_value(gpioButton));
    printk(KERN_INFO "GPIO_TEST: The button was pressed %d times\n", numberPresses);
    gpio_set_value(output, 0);              // Turn the LED off, makes it clear the device was unloaded
    gpio_unexport(output);                  // Unexport the LED GPIO
@@ -104,7 +104,7 @@ static void __exit ebbgpio_exit(void){
 static irq_handler_t ebbgpio_irq_handler(unsigned int irq, void *dev_id, struct pt_regs *regs){
    ledOn = !ledOn;                          // Invert the LED state on each button press
    gpio_set_value(output, ledOn);          // Set the physical LED accordingly
-   printk(KERN_INFO "GPIO_TEST: Interrupt! (button state is %d)\n", gpio_get_value(input));
+   printk(KERN_INFO "GPIO_TEST: Interrupt! (button state is %d)\n", gpio_get_value(gpioButton));
    numberPresses++;                         // Global counter, will be outputted when the module is unloaded
    return (irq_handler_t) IRQ_HANDLED;      // Announce that the IRQ has been handled correctly
 }
