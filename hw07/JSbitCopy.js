@@ -12,11 +12,12 @@ b.pinMode(input, b.INPUT);
 b.pinMode(output,b.OUTPUT);
 
 // initialize interrupt for start button
-b.attachInterrupt(input, turnOutputOn, b.RISING);
-b.attachInterrupt(input, turnOutputOff, b.FALLING);
+b.attachInterrupt(input, turnOutputOn, b.CHANGE);
+// b.attachInterrupt(input, turnOutputOff, b.FALLING);
 
-function turnOutputOn(){
-    b.digitalWrite(output, 1);
+function turnOutputOn(x){
+    // console.log(x);
+    b.digitalWrite(output, x.value);
 }
 
 function turnOutputOff(){

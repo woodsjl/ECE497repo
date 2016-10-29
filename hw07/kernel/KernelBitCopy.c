@@ -20,8 +20,8 @@ MODULE_AUTHOR("Derek Molloy");
 MODULE_DESCRIPTION("A Button/LED test driver for the BBB");
 MODULE_VERSION("0.1");
 
-static unsigned int output = 113;       ///< hard coded to P9_28 for output
-static unsigned int input = 115;   	///< hard coded to P9_27 for input
+static unsigned int output = 115;       ///< hard coded to P9_28 for output
+static unsigned int input = 113;   	///< hard coded to P9_27 for input
 static unsigned int irqNumber;          ///< Used to share the IRQ number within this file
 static unsigned int numberPresses = 0;  ///< For information, store the number of button presses
 static bool	    ledOn = 0;          ///< Is the LED on or off? Used to invert its state (off by default)
