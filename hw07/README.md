@@ -10,3 +10,18 @@ these test wire a function generator with a square wave to pin P9_28 and connect
 to to P9_28 and P9_27 then measure the offset 
 
 JSbitCopy.js run this program to test javascipt response time
+
+mmap: this directory contains the necessary files to run the test for memory map using c
+    run the make file then execute the created executable
+    
+kernel: this directory contains the necessary files to create the kernel module
+    run the make file then run the insmod command to insert the kernel module 
+    after test is complete run rmmod command to remove the kernel module
+    
+PRU: this directory contains the necessary file to create the code to run on the 
+    pru run source setup.sh followed by make and make install to put the code on 
+    the pru and then run the test
+    
+ScopeImg.png: this is a screen shot of the scope during the javascript test
+
+results.odt: this is a table of the results
