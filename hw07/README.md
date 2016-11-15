@@ -25,3 +25,9 @@ PRU: this directory contains the necessary file to create the code to run on the
 ScopeImg.png: this is a screen shot of the scope during the javascript test
 
 results.odt: this is a table of the results
+
+==========
+Prof. Yoder's comments
+Min and Max times weren't reported, otherwise it looks good.
+
+Grade:  9/10
